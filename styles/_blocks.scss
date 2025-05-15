@@ -18,14 +18,13 @@
       margin: 0 15px 30px;
     }
 
-    border: 1px solid $brand_color;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: $brand_color;
-    display: flex;
-    flex: 1 0 340px;
-    margin: 0 0 30px;
-    max-width: 100%;
+    border: 2px solid $brand_color;
+    box-shadow: 0 0 0 1px ;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) $low-contrast-border-color;
+    width: 280px;
     text-align: center;
 
     &:hover,
@@ -78,7 +77,7 @@
 
   &-item-title {
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   &-item-description {
