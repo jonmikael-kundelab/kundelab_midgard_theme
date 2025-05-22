@@ -1,16 +1,16 @@
-# Copenhagen Theme by Zendesk
+# Midgard Theme by Kundelab
 
-The Copenhagen theme is the default Zendesk Guide theme. It is designed to be responsive and accessible.
+Based on the open source Copenhagen Theme.
 Learn more about customizing Zendesk Guide [here](https://support.zendesk.com/hc/en-us/sections/206670747).
 
-The Copenhagen theme for Help Center consists of:
+The Midgard theme for Help Center consists of:
 - [Manifest file](#manifest-file)
 - [Set of templates](#templates)
 - [Stylesheet and JavaScript files](#stylesheet-and-javascript)
 - [Assets folder](#assets).
 
 ## How to use
-This is the latest version of the Copenhagen theme available for Guide. It is possible to use this repository as a starting point to build your own custom theme. You can fork this repository as you see fit.
+This is the latest version of the Midgard theme available for Guide. It is possible to use this repository as a starting point to build your own custom theme. You can fork this repository as you see fit.
 You can use your favorite IDE to develop themes and preview your changes locally in a web browser using [ZCLI](https://github.com/zendesk/zcli/). For details, read the [zcli themes](https://github.com/zendesk/zcli/blob/master/docs/themes.md) documentation.
 
 ## Customizing your theme
@@ -105,11 +105,11 @@ Notes:
 - Preview requires login so make sure to first run `yarn zcli login -i` if you haven't done that before.
 
 ## Assets
-The Copenhagen theme comes with a few JavaScript assets, but you can add other assets to your theme by placing them in the `assets` folder.
+The Midgard theme comes with a few JavaScript assets, but you can add other assets to your theme by placing them in the `assets` folder.
 
 # React components
 
-From version 4.0.0, the Copenhagen theme uses some React components to render parts of the UI. These components are located in the `src/modules` folder and are built using the [Zendesk Garden](https://garden.zendesk.com/) component library.
+From version 4.0.0, the Midgard theme uses some React components to render parts of the UI. These components are located in the `src/modules` folder and are built using the [Zendesk Garden](https://garden.zendesk.com/) component library.
 
 These components are bundled as native [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) as part of the Rollup build process, and they are emitted as JS files in the `assets` folder. Since assets are renamed when a theme is installed, the modules needs to be imported using the [asset helper](https://developer.zendesk.com/api-reference/help_center/help-center-templates/helpers/#asset-helper). 
 
@@ -319,70 +319,3 @@ For example:
 In this example, errors for the audit `tabindex` with the selector `body > a.skip-navigation` will be reported as warnings in all pages (`*`). The same will happen for the audit `aria-allowed-attr` with the selector `body > div.profile-info`, but only for the user profile page `/hc/:locale/profiles/:id`.
 
 Please keep in mind that this should only be used when strictly necessarity. Accessibility should be a focus and a priority when making changes to the theme.
-
-# Contributing
-Pull requests are welcome on GitHub at https://github.com/zendesk/copenhagen_theme. Please mention @zendesk/vikings when creating a pull request.
-
-We use [conventional commits](https://conventionalcommits.org/) to improve readability of the project history and to automate the release process. The commit message should therefore respect the following format:
-
-```
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
-
-```
-
-- type: describes the category of the change. See [supported types](#commit-types).
-- scope: (optional) describes what is affected by the change
-- subject: a small description of the change
-- body: (optional) additional contextual information about the change
-- footer: (optional) adds external links, issue references and other meta-information
-
-i.e.:
-
-```
-chore: automate release
-fix(styles): fix button padding
-feat(script): add auto focus to fields with errors
-```
-
-We use [`husky`](https://github.com/typicode/husky) and [`commitlint`](https://github.com/conventional-changelog/commitlint) to validate messages when commiting.
-
-We use [Github actions](https://github.com/features/actions) together with [`semantic-release`](https://github.com/semantic-release/semantic-release) to release a new version of the theme once a PR gets merged. On each merge, `semantic-release` analyses the commit messages and infers a semantic version bump. It then creates a git tag, updates the manifest version and generates the corresponding [changelog](CHANGELOG.md).
-
-## Commit types
-
-The list bellow describes the supported commit types and their effect in the release and changelog.
-
-| Type     | Description                                                                                            | Release | Changelog                |
-|----------|--------------------------------------------------------------------------------------------------------|---------|--------------------------|
-| build    | Changes that affect the build system or external dependencies                                          | -       | -                        |
-| chore    | Other changes that don't modify the source code                                                        | -       | -                        |
-| ci       | Changes to our CI configuration files and scripts                                                      | -       | -                        |
-| docs     | Documentation only changes                                                                             | -       | -                        |
-| feat     | A new feature                                                                                          | minor   | Features                 |
-| fix      | A bug fix                                                                                              | patch   | Bug Fixes                |
-| perf     | A code change that improves performance                                                                | patch   | Performance Improvements |
-| refactor | A code change that neither fixes a bug nor adds a feature                                              | -       | -                        |
-| revert   | Reverts a previous commit                                                                              | patch   | Reverts                  |
-| style    | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) | -       | -                        |
-| test     | Adding missing tests or correcting existing tests                                                      | -       | -                        |
-
-## Breaking changes
-
-Commits that add a breaking change should include `BREAKING CHANGE` in the body or footer of the commit message.
-
-i.e.:
-
-```
-feat: update theme to use theming api v2
-
-BREAKING CHANGE: theme is now relying on functionality that is exclusive to the theming api v2
-```
-
-This will then generate a major release and add a `BREAKING CHANGES` section in the [changelog](CHANGELOG.md).
-
-# Bug reports
-Bug reports must be submitted through Zendesk's standard support channels: https://www.zendesk.com/contact/
