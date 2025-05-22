@@ -659,3 +659,19 @@
   });
 
 })();
+
+  //Customer Code Section
+
+  //Hide certain elements on page load
+  document.addEventListener("DOMContentLoaded", function () {
+  const blockItems = document.querySelectorAll('.blocks-item');
+
+  blockItems.forEach(function(item) {
+    const title = item.querySelector('.blocks-item-title')?.textContent?.trim();
+    
+    // Hide item if title matches
+    if (title === "General") {
+      item.style.display = 'none';
+    }
+  });
+});
