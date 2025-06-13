@@ -670,7 +670,7 @@
     const title = item.querySelector('.blocks-item-title')?.textContent?.trim();
     
     // Hide item if title matches
-    if (title === "General") {
+    if (title == "General") {
       item.style.display = 'none';
     }
   });
